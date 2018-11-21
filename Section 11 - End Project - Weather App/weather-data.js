@@ -1,17 +1,17 @@
 export class WeatherData{
     constructor(){
-        this.cityName = this.cityName;
+        this.cityName = cityName;
         this.description = description;
-        this.temp = ''
+        this.temperature = '';
     }
 }
 
 export const WEATHER_PROXY_HANDLER ={
     get:function(target, prop){
-        return Reflect.get(target, prop)
+        return Reflect.get(target, property)
     },
-    set: function(target, prop, value){
+    set: function(target, property, value){
         const newValue = (value *1.8 +32).toFixed(2)+'F.'
-        return Reflect.set(target,prop, newValue)
+        return Reflect.set(target,property, newValue)
     }
 }
